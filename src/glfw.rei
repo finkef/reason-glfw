@@ -79,7 +79,8 @@ type windowHint =
   | GLFW_FOCUSED
   | GLFW_AUTO_ICONIFY
   | GLFW_FLOATING
-  | GLFW_MAXIMIZED;
+  | GLFW_MAXIMIZED
+  | GLFW_TRANSPARENT_FRAMEBUFFER;
 
 module ButtonState: {
   type t =

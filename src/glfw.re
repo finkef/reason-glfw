@@ -41,7 +41,9 @@ external glfwGetTime: unit => [@unboxed] float =
 external glfwSetTime: ([@unboxed] float) => unit =
   "caml_glfwSetTime_byte" "caml_glfwSetTime";
 
-[@noalloc] external glfwGetNativeWindow: Window.t => NativeWindow.t = "caml_glfwGetNativeWindow";
+[@noalloc]
+external glfwGetNativeWindow: Window.t => NativeWindow.t =
+  "caml_glfwGetNativeWindow";
 
 module Modifier = {
   type t = int;
@@ -116,7 +118,8 @@ type windowHint =
   | GLFW_FOCUSED
   | GLFW_AUTO_ICONIFY
   | GLFW_FLOATING
-  | GLFW_MAXIMIZED;
+  | GLFW_MAXIMIZED
+  | GLFW_TRANSPARENT_FRAMEBUFFER;
 
 module ButtonState = {
   type t =

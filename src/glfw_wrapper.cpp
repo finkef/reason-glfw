@@ -64,6 +64,8 @@ extern "C" {
                 return GLFW_FLOATING;
             case 6:
                 return GLFW_MAXIMIZED;
+            case 7:
+                return GLFW_TRANSPARENT_FRAMEBUFFER;
             default:
                 printf("Unexpected window hint type.\n");
                 return 0;

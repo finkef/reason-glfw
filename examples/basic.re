@@ -29,6 +29,7 @@ let initShaderProgram = (vsSource, fsSource) => {
 
 let run = () => {
   let _ = glfwInit();
+  let _ = glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, true);
   let primaryWindow = glfwCreateWindow(100, 50, "test");
   glfwMakeContextCurrent(primaryWindow);
 
@@ -188,7 +189,7 @@ let run = () => {
     /* let glfwScrollCallback = (window, float, float) => unit; */
     /* type glfwSetScrollCallback = (window, glfwScrollCallback) => unit; */
 
-    glClearColor(0.0, 0., 0., 1.);
+    glClearColor(0.0, 0., 0., 0.);
     glClearDepth(1.0);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
@@ -371,7 +372,10 @@ let run = () => {
   };
 
   let nativeWindow = glfwGetNativeWindow(primaryWindow);
-  print_endline ("Native window handle/pointer: " ++ string_of_int(Obj.magic(nativeWindow)));
+  print_endline(
+    "Native window handle/pointer: "
+    ++ string_of_int(Obj.magic(nativeWindow)),
+  );
 
   let frame = ref(0);
   glfwRenderLoop(_t => {
